@@ -1,0 +1,234 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+{% include 'includes/head.html' %}
+<style>
+    /* Modal */
+.modal-content {
+    background-color: #f9f9f9; /* Beyaz arka plan */
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif bir gölgelendirme */
+    text-align: center; /* Metni ortala */
+}
+
+/* Modal kapatma düğmesi */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Modal içeriği üzerindeki metin stilini güncelle */
+.modal-content p {
+    font-family: 'Arial', sans-serif; /* Güzel bir font */
+    font-size: 24px; /* Büyük font boyutu */
+    color: #333; /* Yazı rengi */
+}
+
+/* Modal içeriğine hover olduğunda efekt ver */
+.modal-content:hover {
+    transform: scale(1.02); /* Biraz büyüt */
+}
+
+</style>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="preloader-circle"></div>
+        <div class="preloader-img">
+            <img src="{% get_media_prefix %}img/core-img/leaf.png" alt="">
+        </div>
+    </div>
+
+    {% include 'includes/navbar.html' %}
+
+    <!-- ##### Breadcrumb Area Start ##### -->
+    <div class="breadcrumb-area">
+        <!-- Top Breadcrumb Area -->
+        <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url({% get_media_prefix %}img/bg-img/24.jpg);">
+            <h2>BİZE ULAŞIN</h2>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/"><i class="fa fa-home"></i> Anasayfa</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">İletişim</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Breadcrumb Area End ##### -->
+
+    <!-- ##### Contact Area Info Start ##### -->
+    <div class="contact-area-info section-padding-0-100">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <!-- Contact Thumbnail -->
+                <div class="col-12 col-md-6">
+                    <div class="contact--thumbnail">
+                        <img src="{% get_media_prefix %}img/bg-img/25.jpg" alt="">
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-5">
+                    <!-- Section Heading -->
+                    <div class="section-heading">
+                        <h2>BİZE ULAŞIN!</h2>
+                        <p>Sizlere daha iyi hizmet verebilmek için hizmetlerimizi geliştiriyoruz.</p>
+                    </div>
+                    <!-- Contact Information -->
+                    <div class="contact-information" style="border: 2px solid #ccc; border-radius: 10px; padding: 15px;">
+                        <p><span>Adresimiz:</span> {{ contact.address }}</p>
+                        <p><span>Telefon Numaramız:</span> {{ contact.tel }}</p>
+                        <p><span>Email Adresimiz:</span> {{ contact.email }}</p>
+                        <p><span>Haftaiçi Çalışma Saatleri:</span> {{ contact.calisma_week }}</p>
+                        <p><span>Haftasonu Çalışma Saatleri:</span> {{ contact.calisma_weekend }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Contact Area Info End ##### -->
+
+    <!-- ##### Contact Area Start ##### -->
+    <section class="contact-area">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-12 col-lg-5">
+                    <!-- Section Heading -->
+                    <div class="section-heading">
+                        <h2>BİZE ULAŞIN!</h2>
+                        <p>Bize mesaj gönderin, Sizi Arayalım!</p>
+                    </div>
+                    <!-- Contact Form Area -->
+                    <div class="contact-form-area mb-100">
+                        <form action="" method="post" id="myForm">
+                            <div class="row">
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="contact-name" placeholder="İsim Soyisim" name='name'>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" id="contact-email" placeholder="Email Adresiniz" name='email'>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="contact-subject" placeholder="İstek" name='subject'>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <textarea class="form-control" name="message1" id="message" cols="30" rows="10" placeholder="Mesaj"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn alazea-btn mt-15">Mesaj Gönder</button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <!-- Modal -->
+                        <div id="myModal" class="modal">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <p id="modalMessage">Successfuly</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                    <!-- Google Maps -->
+                    <div class="map-area mb-100">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1795.2616244235467!2d29.921562630964008!3d40.82229354228868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cb5badf629fe45%3A0xc81fa849234e8755!2sKocaeli%20%C3%9Cniversitesi!5e0!3m2!1str!2str!4v1714404319708!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Contact Area End ##### -->
+
+    {% include 'includes/footer.html' %}
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var form = document.getElementById('myForm');
+        var modal = document.getElementById('myModal');
+        var span = document.getElementsByClassName('close')[0];
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Formun normal submit işlemini durdur
+
+            // Formdaki inputları al
+            var emailInput = document.getElementById('contact-email');
+            var nameInput = document.getElementById('contact-name');
+            var subjectInput = document.getElementById('contact-subject');
+            var messageInput = document.getElementById('message');
+
+            // Inputların değerlerini trim yaparak al
+            var email = emailInput.value.trim();
+            var name = nameInput.value.trim();
+            var subject = subjectInput.value.trim();
+            var message = messageInput.value.trim();
+
+            // Boş alan kontrolü
+            if (email === '' || name === '' || subject === '' || message === '') {
+                alert('Tüm alanları doldurunuz');
+                return;
+            }
+
+            // Email formatı kontrolü
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Geçerli bir email adresi giriniz');
+                return;
+            }
+
+            // Modalı aç
+            modal.style.display = 'block';
+
+            // Formu submit et (sayfayı yeniden yükle)
+            setTimeout(function() {
+                window.location.reload();
+            }, 2000); // 2 saniye sonra sayfayı yeniden yükle
+        });
+
+        // Modalın kapatılması için X butonuna basıldığında
+        span.onclick = function () {
+            modal.style.display = 'none';
+        };
+
+        // Modalın kapatılması için modal dışına tıklandığında
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        };
+    });
+</script>
+
+</html>

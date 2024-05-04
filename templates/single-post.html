@@ -1,0 +1,204 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  {% include 'includes/head.html' %}
+
+  <body>
+    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+      <div class="preloader-circle"></div>
+      <div class="preloader-img">
+        <img src="{% get_media_prefix %}img/core-img/leaf.png" alt="" />
+      </div>
+    </div>
+
+    {% include 'includes/navbar.html' %}
+
+    <!-- ##### Breadcrumb Area Start ##### -->
+    <div class="breadcrumb-area">
+      <!-- Top Breadcrumb Area -->
+      <div
+        class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center"
+        style="background-image: url({% get_media_prefix %}img/bg-img/24.jpg)"
+      >
+        <h2>BLOG DETAY SAYFAM</h2>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <a href="/"><i class="fa fa-home"></i> Anasayfa</a>
+                </li>
+                <li class="breadcrumb-item"><a href="/blog/">Blog</a></li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  Blog Detay Sayfası
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ##### Breadcrumb Area End ##### -->
+
+    <!-- ##### Blog Content Area Start ##### -->
+    <section class="blog-content-area section-padding-0-100">
+      <div class="container">
+        <div class="row justify-content-center">
+          <!-- Blog Posts Area -->
+          <div class="col-12 col-md-10">
+            <div class="blog-posts-area">
+              <!-- Post Details Area -->
+              <div class="single-post-details-area">
+                <div class="post-content">
+                  <h4 class="post-title" style="text-align: center">
+                    Blog Detay Sayfası
+                  </h4>
+                  <div class="post-meta mb-30">
+                    <a href="#"
+                      ><i class="fa fa-clock-o" aria-hidden="true"></i>
+                      {{object.updated_date}}</a
+                    >
+                    <a href="#"
+                      ><i class="fa fa-user" aria-hidden="true"></i>
+                      {{object.name}}</a
+                    >
+                  </div>
+
+                  <div
+                    class="post-thumbnail mb-30 d-flex justify-content-center align-items-center"
+                  >
+                    <img
+                      style="width:800px;height400px;"
+                      src="{{object.file.url}}"
+                      alt=""
+                    />
+                  </div>
+
+                  <div style="margin-top:20px;" class="row mb-30">
+                    <div class="col-lg-7">
+                      <p
+                        style="
+                          font-weight: bold;
+                          font-size: 24px;
+                          text-align: center;
+                          padding: 20px;
+                          border: 1px solid #ccc;
+                          border-radius: 5px;
+                          background-color: #fff;
+                          margin: 20px;
+                          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                        "
+                      >
+                        {{ object.description1}}
+                      </p>
+                      <p
+                        style="
+                          font-weight: bold;
+                          font-size: 24px;
+                          text-align: center;
+                          padding: 20px;
+                          border: 1px solid #ccc;
+                          border-radius: 5px;
+                          background-color: #fff;
+                          margin: 20px;
+                          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                        "
+                      >
+                        {{ object.description2}}
+                      </p>
+                      <p
+                        style="
+                          font-weight: bold;
+                          font-size: 24px;
+                          text-align: center;
+                          padding: 20px;
+                          border: 1px solid #ccc;
+                          border-radius: 5px;
+                          background-color: #fff;
+                          margin: 20px;
+                          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                        "
+                      >
+                        {{ object.description3}}
+                      </p>
+                      
+                    </div>
+                    <div class="col-lg-5">
+                      <img
+                      style="width:400px; height:400px;"
+                        src="{{ object.fileSmall.url}}"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+
+                  <blockquote>
+                    <div class="container mt-5">
+                      <div class="blockquote">
+                          <div class="blockquote-text" style="background-color: #CDE8E5; padding: 20px; border-left: 5px solid #3C5B6F; border-radius: 5px; margin-bottom: 20px;">
+                              <h5 style="color: #153448; font-style: italic;">
+                                  {{ object.comment}}
+                              </h5>
+                              <h5 style="color:#4D869C;margin-top: 10px; font-weight: bold;">Nilsu Öztürk</h5>
+                          </div>
+                      </div>
+                  </div>
+                  </blockquote>
+                  <p style="
+                    color:#153448;
+                    border: 2px solid #4D869C;
+                    padding: 10px;
+                    border-radius: 5px;
+                    font-weight: bold;
+                    font-size: 18px;
+                    margin-bottom: 10px;">
+                    {{ object.detail1}}
+                  </p>
+                  <p style="
+                    color:#153448;
+                    border: 2px solid #4D869C;
+                    padding: 10px;
+                    border-radius: 5px;
+                    font-weight: bold;
+                    font-size: 18px;
+                    margin-bottom: 10px;">
+                    {{ object.detail2}}
+                  </p>
+                </div>
+              </div>
+              <!-- Post Tags & Share -->
+
+              
+
+              <!-- Leave A Comment -->
+              
+            </div>
+          </div>
+
+          <!-- Blog Sidebar Area -->
+          <div class="col-12 col-sm-9 col-md-4">
+            <div class="post-sidebar-area">
+              <!-- ##### Single Widget Area ##### -->
+
+              <!-- ##### Single Widget Area ##### -->
+
+              <!-- ##### Single Widget Area ##### -->
+
+              <!-- ##### Single Widget Area ##### -->
+
+              <!-- ##### Single Widget Area ##### -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ##### Blog Content Area End ##### -->
+
+    {% include 'includes/footer.html' %}
+  </body>
+  
+</html>

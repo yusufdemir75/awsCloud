@@ -1,0 +1,19 @@
+version: '3.10'
+
+services:
+ app:
+  build: 
+    context: .
+    dockerfile: dockerfile
+  env_file:
+   - djangoProject/.env
+  volumes:
+    - .:/srv/app
+  ports: 
+    - "0.0.0.0:8000:8000"
+  network_mode: bridge
+  command: python manage.py runserver 0.0.0.0:8000
+
+volumes:
+  static-data:
+  

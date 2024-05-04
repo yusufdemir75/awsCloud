@@ -1,0 +1,144 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+{% include 'includes/head.html'%}
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="preloader-circle"></div>
+        <div class="preloader-img">
+            <img src="{% get_media_prefix %}img/core-img/leaf.png" alt="">
+        </div>
+    </div>
+
+    {% include 'includes/navbar.html'%}
+
+    <!-- ##### Breadcrumb Area Start ##### -->
+    <div class="breadcrumb-area">
+        <!-- Top Breadcrumb Area -->
+        <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url({% get_media_prefix %}img/bg-img/24.jpg);">
+            <h2>ÜRÜNLERİMİZ</h2>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/"><i class="fa fa-home"></i> Anasayfa</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Ürünler</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Breadcrumb Area End ##### -->
+
+    <!-- ##### Portfolio Area Start ##### -->
+    <section class="alazea-portfolio-area section-padding-100-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Section Heading -->
+                    <div class="section-heading text-center">
+                        <h2>Ürünlerimiz</h2>
+                        <p>Her biri özenle seçilmiş ürünlerimizle kaliteyi ve güveni bir arada sunuyoruz.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="alazea-portfolio-filter">
+                        <div class="portfolio-filter">
+        
+                            <button class="btn active" data-filter="*">{{portfolio_title_1}}</button>
+                            <button class="btn active" data-filter=".design">{{portfolio_title_2}}</button>
+                            <button class="btn" data-filter=".garden">{{portfolio_title_3}}</button>
+                            <button class="btn" data-filter=".home-design">{{portfolio_title_4}}</button>
+                            <button class="btn" data-filter=".office-design">{{portfolio_title_5}}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row alazea-portfolio">
+
+
+                {% for post in posts %}
+                <!-- Single Portfolio Area -->
+                <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item {% if post.department == 'Salon Bitkisi' %}
+                office-design
+                {% elif post.department == 'Bahçe Bitkisi' %}
+                garden
+                {% elif post.department == 'Dış Mekan Bitkisi' %}
+                design
+                {% elif post.department == 'Ev Bitkisi' %}
+                home-design
+                {% endif %} wow fadeInUp" data-wow-delay="100ms">
+                    <!-- Portfolio Thumbnail -->
+                    <div class="container mt-5">
+                        <a href="{% url "single_post" post.pk %}" class="portfolio-thumbnail bg-img" style="background-image: url({{ post.file.url }});">
+                            <!-- Portfolio Hover Text -->
+                            
+                            
+                        </a>
+                        
+                    </div>
+                </div>
+                {% endfor %}
+
+                
+            
+        </div>
+        <div style="margin-top:20px;margin-bottom:20px;" class="row">
+            <div class="col-12">
+                <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                        <li class="page-item {% if not posts.has_previous %}disabled{% endif %}">
+                            <a class="page-link" href="{% if posts.has_previous %}?page=1{% endif %}">
+                                <i class="fa fa-angle-double-left"></i>
+                            </a>
+                        </li>
+                        <li class="page-item {% if not posts.has_previous %}disabled{% endif %}">
+                            <a class="page-link" href="{% if posts.has_previous %}?page={{ posts.previous_page_number }}{% endif %}">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        </li>
+        
+                        {% for num in posts.paginator.page_range %}
+                            {% if num == posts.number %}
+                                <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+                            {% else %}
+                                <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                            {% endif %}
+                        {% endfor %}
+        
+                        <li class="page-item {% if not posts.has_next %}disabled{% endif %}">
+                            <a class="page-link" href="{% if posts.has_next %}?page={{ posts.next_page_number }}{% endif %}">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                        <li class="page-item {% if not posts.has_next %}disabled{% endif %}">
+                            <a class="page-link" href="{% if posts.has_next %}?page={{ posts.paginator.num_pages }}{% endif %}">
+                                <i class="fa fa-angle-double-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+    </div>
+    </section>
+    <!-- ##### Portfolio Area End ##### -->
+
+    {% include 'includes/footer.html'%}
+</body>
+
+</html>

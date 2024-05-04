@@ -1,0 +1,326 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% include 'includes/head.html' %}
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="preloader-circle"></div>
+        <div class="preloader-img">
+            <img src="{% get_media_prefix %}img/core-img/leaf.png" alt="">
+        </div>
+    </div>
+
+    {% include 'includes/navbar.html'%}
+
+    <!-- ##### Breadcrumb Area Start ##### -->
+    <div class="breadcrumb-area">
+        <!-- Top Breadcrumb Area -->
+        <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url({% get_media_prefix %}img/bg-img/24.jpg);">
+            <h2>HAKKIMIZDA</h2>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/"><i class="fa fa-home"></i>Anasayfa</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Hakkımızda</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Breadcrumb Area End ##### -->
+
+    <!-- ##### About Area Start ##### -->
+    <section class="about-us-area">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-12 col-lg-5">
+                    <!-- Section Heading -->
+                    <div class="section-heading">
+                        <h2>Hakkımızda</h2>
+                        <p>Bitki tutkunu bir ekip olarak, doğayı ve bitkileri seven herkesi bir araya getirerek, yeşil bir dünyanın parçası olmayı hedefliyoruz.</p>
+                    </div>
+                    <p>Deneyimli uzmanlarımızın rehberliğinde, bitki bakımıyla ilgili bilgi ve deneyimlerimizi paylaşarak, herkesin evinde ve çevresinde yeşil bir yaşamı teşvik etmeyi amaçlıyoruz. Doğanın sunduğu güzellikleri keşfetmek ve bitkilerle olan bağımızı güçlendirmek için buradayız. Bizimle birlikte, her adımda doğaya biraz daha yaklaşın ve yeşilin büyüleyici dünyasını keşfedin.</p>
+
+                    <!-- Progress Bar Content Area -->
+                    <div class="alazea-progress-bar mb-50">
+                        <!-- Single Progress Bar -->
+                        <div class="single_progress_bar">
+                            <p>Ofis Bitkileri</p>
+                            <div id="bar1" class="barfiller">
+                                <div class="tipWrap">
+                                    <span class="tip"></span>
+                                </div>
+                                <span class="fill" data-percentage="80"></span>
+                            </div>
+                        </div>
+
+                        <!-- Single Progress Bar -->
+                        <div class="single_progress_bar">
+                            <p>Ev Bitkileri</p>
+                            <div id="bar2" class="barfiller">
+                                <div class="tipWrap">
+                                    <span class="tip"></span>
+                                </div>
+                                <span class="fill" data-percentage="70"></span>
+                            </div>
+                        </div>
+
+                        <!-- Single Progress Bar -->
+                        <div class="single_progress_bar">
+                            <p>Bahçe Bitkileri</p>
+                            <div id="bar3" class="barfiller">
+                                <div class="tipWrap">
+                                    <span class="tip"></span>
+                                </div>
+                                <span class="fill" data-percentage="85"></span>
+                            </div>
+                        </div>
+
+                        <!-- Single Progress Bar -->
+                        <div class="single_progress_bar">
+                            <p>İç Mekan Ve Dış Mekan Bitkileri</p>
+                            <div id="bar4" class="barfiller">
+                                <div class="tipWrap">
+                                    <span class="tip"></span>
+                                </div>
+                                <span class="fill" data-percentage="65"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                    <div class="alazea-benefits-area">
+                        <div class="row">
+                            <!-- Single Benefits Area -->
+                            <div class="col-12 col-sm-6">
+                                <div class="single-benefits-area">
+                                    <img src="{% get_media_prefix %}img/core-img/b1.png" alt="">
+                                    <h5>Kaliteli Ürünler</h5>
+                                    <p>Size özel olarak seçtiğiniz en kaliteli ürünlerle, doğanın huzurunu yaşayın.</p>
+                                </div>
+                            </div>
+
+                            <!-- Single Benefits Area -->
+                            <div class="col-12 col-sm-6">
+                                <div class="single-benefits-area">
+                                    <img src="{% get_media_prefix %}img/core-img/b2.png" alt="">
+                                    <h5>Kusursuz Hizmet</h5>
+                                    <p>Deneyimli ekibimizle birlikte, her detayı düşünerek size kusursuz hizmet anlayışımızla her zaman yanınızdayız.</p>
+                                </div>
+                            </div>
+
+                            <!-- Single Benefits Area -->
+                            <div class="col-12 col-sm-6">
+                                <div class="single-benefits-area">
+                                    <img src="{% get_media_prefix %}img/core-img/b3.png" alt="">
+                                    <h5>%100 Doğal</h5>
+                                    <p>Ürünlerimizde %100 doğal içerikler kullanarak, sağlığınızı ve doğayı ön planda tutuyoruz.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Single Benefits Area -->
+                            <div class="col-12 col-sm-6">
+                                <div class="single-benefits-area">
+                                    <img src="{% get_media_prefix %}img/core-img/b4.png" alt="">
+                                    <h5>Çevre Dostu</h5>
+                                    <p>Çevre dostu yaklaşımımızla, her ürün ve hizmetimizde doğal kaynakları korumayı, geri dönüşümü teşvik etmeyi ve sürdürülebilirliği desteklemeyi ön planda tutarak çevreyi koruyoruz.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="border-line"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### About Area End ##### -->
+
+    <!-- ##### Testimonial Area Start ##### -->
+    
+    <!-- ##### Cool Facts Area Start ##### -->
+    <section class="cool-facts-area bg-img section-padding-100-0" style="background-image: url({% get_media_prefix %}img/bg-img/cool-facts.png);">
+        <div class="container">
+            <div class="row">
+
+                <!-- Single Cool Facts Area -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="single-cool-fact d-flex align-items-center justify-content-center mb-100">
+                        <div class="cf-icon">
+                            <img src="{% get_media_prefix %}img/core-img/cf1.png" alt="">
+                        </div>
+                        <div class="cf-content">
+                            <h2><span class="counter">50</span>+</h2>
+                            <h6>Bitki Çeşitleri</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Cool Facts Area -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="single-cool-fact d-flex align-items-center justify-content-center mb-100">
+                        <div class="cf-icon">
+                            <img src="{% get_media_prefix %}img/core-img/cf2.png" alt="">
+                        </div>
+                        <div class="cf-content">
+                            <h2><span class="counter">70</span></h2>
+                            <h6>BLOG</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Cool Facts Area -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="single-cool-fact d-flex align-items-center justify-content-center mb-100">
+                        <div class="cf-icon">
+                            <img src="{% get_media_prefix %}img/core-img/cf3.png" alt="">
+                        </div>
+                        <div class="cf-content">
+                            <h2><span class="counter">200</span>+</h2>
+                            <h6>MUTLU YORUM</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Cool Facts Area -->
+                
+
+            </div>
+        </div>
+
+        <!-- Side Image -->
+        <div class="side-img wow fadeInUp" data-wow-delay="500ms">
+            <img src="{% get_media_prefix %}img/core-img/pot.png" alt="">
+        </div>
+    </section>
+    <!-- ##### Cool Facts Area End ##### -->
+
+    <!-- ##### Team Area Start ##### -->
+    <section class="team-area section-padding-100-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Section Heading -->
+                    <div class="section-heading text-center">
+                        <h2>TEKNİK EKİBİMİZ!</h2>
+                        <p>Doğru bitki bakımı, sağlıklı ve mutlu bitkilerin yetişmesi için kilit bir faktördür. Teknik ekibimiz, bitki bakımında uzmanlığı ve deneyimiyle sizin için her zaman burada. Size en iyi hizmeti sunabilmek için sürekli olarak güncellenen bilgi ve teknik becerilere sahibiz. Her sorunuzu çözmek ve her ihtiyacınızı karşılamak için buradayız. Sizlerin memnuniyeti ve güveni, bizim önceliğimizdir.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <!-- Single Team Member Area -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-team-member text-center mb-100">
+                        <!-- Team Member Thumb -->
+                        <div class="team-member-thumb">
+                            <img src="{% get_media_prefix %}img/bg-img/team1.png" alt="">
+                            <!-- Social Info -->
+                            <div class="team-member-social-info">
+                                <a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                <a href="https://www.google.com" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                                <a href="https://www.linkedin.com" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                        <!-- Team Member Info -->
+                        <div class="team-member-info mt-30">
+                            <h5>Aydın Gedik</h5>
+                            <p>Genel Müdür</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Team Member Area -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-team-member text-center mb-100">
+                        <!-- Team Member Thumb -->
+                        <div class="team-member-thumb">
+                            <img src="{% get_media_prefix %}img/bg-img/team2.png" alt="">
+                            <!-- Social Info -->
+                            <div class="team-member-social-info">
+                                <a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                <a href="https://www.google.com" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                                <a href="https://www.linkedin.com" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                        <!-- Team Member Info -->
+                        <div class="team-member-info mt-30">
+                            <h5>Zeynep Birol</h5>
+                            <p>Bahçe Tasarımcısı</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Team Member Area -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-team-member text-center mb-100">
+                        <!-- Team Member Thumb -->
+                        <div class="team-member-thumb">
+                            <img src="{% get_media_prefix %}img/bg-img/team3.png" alt="">
+                            <!-- Social Info -->
+                            <div class="team-member-social-info">
+                                <a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                <a href="https://www.google.com" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                                <a href="https://www.linkedin.com" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                        <!-- Team Member Info -->
+                        <div class="team-member-info mt-30">
+                            <h5>Ahmet Ekrem</h5>
+                            <p>Bahçe Planlama Yöneticisi</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Team Member Area -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-team-member text-center mb-100">
+                        <!-- Team Member Thumb -->
+                        <div class="team-member-thumb">
+                            <img src="{% get_media_prefix %}img/bg-img/team4.png" alt="">
+                            <!-- Social Info -->
+                            <div class="team-member-social-info">
+                                <a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                <a href="https://www.google.com" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                                <a href="https://www.linkedin.com" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                        <!-- Team Member Info -->
+                        <div class="team-member-info mt-30">
+                            <h5>Asiye Yaban</h5>
+                            <p>Peyzaj Mimarı</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- ##### Team Area End ##### -->
+
+    {%include 'includes/footer.html'%}
+</body>
+
+</html>

@@ -1,0 +1,588 @@
+ {% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+{%  include 'includes/head.html' %}
+<style>
+    /* Modal */
+.modal-content {
+    background-color: #f9f9f9; /* Beyaz arka plan */
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif bir gölgelendirme */
+    text-align: center; /* Metni ortala */
+}
+
+/* Modal kapatma düğmesi */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Modal içeriği üzerindeki metin stilini güncelle */
+.modal-content p {
+    font-family: 'Arial', sans-serif; /* Güzel bir font */
+    font-size: 24px; /* Büyük font boyutu */
+    color: #333; /* Yazı rengi */
+}
+
+/* Modal içeriğine hover olduğunda efekt ver */
+.modal-content:hover {
+    transform: scale(1.02); /* Biraz büyüt */
+}
+
+</style>
+<body>
+    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="preloader-circle"></div>
+        <div class="preloader-img">
+            <img src="{% get_media_prefix %}img/core-img/leaf.png" alt="">
+        </div>
+    </div>
+
+    {%  include 'includes/navbar.html' %}
+
+    <!-- ##### Hero Area Start ##### -->
+    <section class="hero-area">
+        <div class="hero-post-slides owl-carousel">
+
+            <!-- Single Hero Post -->
+            <div class="single-hero-post bg-overlay">
+                <!-- Post Image -->
+                <div class="slide-img bg-img" style="background-image: url({% get_media_prefix %}img/bg-img/1.jpg);"></div>
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-12">
+                            <!-- Post Content -->
+                            <div class="hero-slides-content text-center">
+                                <h2>{{ home_description_1}}</h2>
+                                <p>{{ home_description_2}}</p>
+                                <div class="welcome-btn-group">
+                                    <a href="/blog/" class="btn alazea-btn mr-30">Keşfetmeye Başla!</a>
+                                    <a href="/contact/" class="btn alazea-btn active">Bize Ulaşın!</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Hero Post -->
+            <div class="single-hero-post bg-overlay">
+                <!-- Post Image -->
+                <div class="slide-img bg-img" style="background-image: url({% get_media_prefix %}img/bg-img/2.jpg);"></div>
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-12">
+                            <!-- Post Content -->
+                            <div class="hero-slides-content text-center">
+                                <h2>{{ home_description_1}}</h2>
+                                <p>{{ home_description_2}}</p>
+                                <div class="welcome-btn-group">
+                                    <a href="/blog/" class="btn alazea-btn mr-30">Keşfetmeye Başla!</a>
+                                    <a href="/contact/" class="btn alazea-btn active">Bize Ulaşın!</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- ##### Hero Area End ##### -->
+
+    <!-- ##### Service Area Start ##### -->
+    <section class="our-services-area bg-gray section-padding-100-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Section Heading -->
+                    <div class="section-heading text-center">
+                        <h2>HİZMETLERİMİZ</h2>
+                        <p>Ekibimizle bitki bakımı hakkında ipuçları ve uzman tavsiyeleriyle, Bitki tutkunlarının en iyi dostu olmaya devam ediyoruz.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-between">
+                <div class="col-12 col-lg-5">
+                    <div class="alazea-service-area mb-100">
+
+                        <!-- Single Service Area -->
+                        <div class="single-service-area d-flex align-items-center wow fadeInUp" data-wow-delay="100ms">
+                            <!-- Icon -->
+                            <div class="service-icon mr-30">
+                                <img src="{% get_media_prefix %}img/core-img/s1.png" alt="">
+                            </div>
+                            <!-- Content -->
+                            <div class="service-content">
+                                <h5>{{   home_services_1 }}</h5>
+                                <p>{{   home_services_1_1 }}</p>
+                            </div>
+                        </div>
+
+                        <!-- Single Service Area -->
+                        <div class="single-service-area d-flex align-items-center wow fadeInUp" data-wow-delay="300ms">
+                            <!-- Icon -->
+                            <div class="service-icon mr-30">
+                                <img src="{% get_media_prefix %}img/core-img/s2.png" alt="">
+                            </div>
+                            <!-- Content -->
+                            <div class="service-content">
+                                <h5>{{ home_services_2 }}</h5>
+                                <p>{{home_services_2_1}}</p>
+                            </div>
+                        </div>
+
+                        <!-- Single Service Area -->
+                        <div class="single-service-area d-flex align-items-center wow fadeInUp" data-wow-delay="500ms">
+                            <!-- Icon -->
+                            <div class="service-icon mr-30">
+                                <img src="{% get_media_prefix %}img/core-img/s3.png" alt="">
+                            </div>
+                            <!-- Content -->
+                            <div class="service-content">
+                                <h5>{{home_services_3}} </h5>
+                                <p>{{home_services_3_1}}</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                    <div style="margin-top: 40px;" class="alazea-video-area bg-overlay mb-100">
+                        <img style="height: 350px; " src="{{home_services_image_1.url}}" alt="">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Service Area End ##### -->
+
+    <!-- ##### About Area Start ##### -->
+    <section class="about-us-area section-padding-100-0">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-12 col-lg-5">
+                    <!-- Section Heading -->
+                    <div class="section-heading">
+                        <h2>Hakkımızda</h2>
+                        <p>{{ about_description_1 }}</p>
+                    </div>
+                    <p>{{about_description_2}}</p>
+
+                    <!-- Progress Bar Content Area -->
+                    <div class="alazea-progress-bar mb-50">
+                        <!-- Single Progress Bar -->
+                        <div class="single_progress_bar">
+                            <p>Ofis Bitkileri</p>
+                            <div id="bar1" class="barfiller">
+                                <div class="tipWrap">
+                                    <span class="tip"></span>
+                                </div>
+                                <span class="fill" data-percentage="80"></span>
+                            </div>
+                        </div>
+
+                        <!-- Single Progress Bar -->
+                        <div class="single_progress_bar">
+                            <p>Ev Bitkileri</p>
+                            <div id="bar2" class="barfiller">
+                                <div class="tipWrap">
+                                    <span class="tip"></span>
+                                </div>
+                                <span class="fill" data-percentage="70"></span>
+                            </div>
+                        </div>
+
+                        <!-- Single Progress Bar -->
+                        <div class="single_progress_bar">
+                            <p>Bahçe Bitkileri</p>
+                            <div id="bar3" class="barfiller">
+                                <div class="tipWrap">
+                                    <span class="tip"></span>
+                                </div>
+                                <span class="fill" data-percentage="85"></span>
+                            </div>
+                        </div>
+
+                        <!-- Single Progress Bar -->
+                        <div class="single_progress_bar">
+                            <p>İç Mekan Ve Dış Mekan Bitkileri</p>
+                            <div id="bar4" class="barfiller">
+                                <div class="tipWrap">
+                                    <span class="tip"></span>
+                                </div>
+                                <span class="fill" data-percentage="65"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                    <div class="alazea-benefits-area">
+                        <div class="row">
+                            <!-- Single Benefits Area -->
+                            <div class="col-12 col-sm-6">
+                                <div class="single-benefits-area">
+                                    <img src="{% get_media_prefix %}img/core-img/b1.png" alt="">
+                                    <h5>{{ about_title_1 }}</h5>
+                                    <p>{{about_title_1_1}}</p>
+                                </div>
+                            </div>
+
+                            <!-- Single Benefits Area -->
+                            <div class="col-12 col-sm-6">
+                                <div class="single-benefits-area">
+                                    <img src="{% get_media_prefix %}img/core-img/b2.png" alt="">
+                                    <h5>{{about_title_2}}</h5>
+                                    <p>{{about_title_2_1}}</p>
+                                </div>
+                            </div>
+
+                            <!-- Single Benefits Area -->
+                            <div class="col-12 col-sm-6">
+                                <div class="single-benefits-area">
+                                    <img src="{% get_media_prefix %}img/core-img/b3.png" alt="">
+                                    <h5>{{about_title_3}}</h5>
+                                    <p>{{about_title_3_1}}</p>
+                                </div>
+                            </div>
+
+                            <!-- Single Benefits Area -->
+                            <div class="col-12 col-sm-6">
+                                <div class="single-benefits-area">
+                                    <img src="{% get_media_prefix %}img/core-img/b4.png" alt="">
+                                    <h5>Çevre Dostu </h5>
+                                    <p>Çevre dostu yaklaşımımızla, her ürün ve hizmetimizde doğal kaynakları korumayı, geri dönüşümü teşvik etmeyi ve sürdürülebilirliği desteklemeyi ön planda tutarak çevreyi koruyoruz.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="border-line"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### About Area End ##### -->
+
+    <!-- ##### Portfolio Area Start ##### -->
+    
+    <!-- ##### Portfolio Area End ##### -->
+
+    <!-- ##### Testimonial Area Start ##### -->
+    <section class="testimonial-area section-padding-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="testimonials-slides owl-carousel">
+
+
+                        {% for comment in comments %}
+                        <!-- Single Testimonial Slide -->
+                        <div class="single-testimonial-slide">
+                            <div class="row align-items-center">
+                                <div class="col-12 col-md-6">
+                                    <div class="testimonial-thumb">
+                                        <img src="{{comment.file.url}}" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="testimonial-content">
+                                        <!-- Section Heading -->
+                                        <div class="section-heading">
+                                            <h2>YORUMLAR</h2>
+                                        </div>
+                                        <p>{{comment.comment}}</p>
+                                        <div class="testimonial-author-info">
+                                            <h6>{{ comment.name }}</h6>
+                                            <p>{{ comment.department }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Testimonial Area End ##### -->
+
+    <!-- ##### Blog Area Start ##### -->
+    <section class="alazea-blog-area section-padding-100-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Section Heading -->
+                    <div class="section-heading text-center">
+                        <h2>Müşterilerimizin Bahçeleri</h2>
+                        <p>Müşterilerimizin Ev, Ofis ve Bahçelerinden Kareler:</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+
+                {% for post in posts %}
+                        <!-- Single Blog Post Area -->
+                        <div class="col-12 col-lg-3">
+                            <div class="single-blog-post mb-50">
+                                <div class="post-thumbnail mb-30">
+                                    <a href=" {% url "single_post" post.pk %}"><img style="height: 200px; width:400px; " src="{{post.file.url}}" alt=""></a>
+                                </div>
+                                <div class="post-content">
+                                    <a href="{% url "single_post" post.pk %}" class="post-title">
+                                        <h5>{{ post.name}}</h5>
+                                    </a>
+                                    <div class="post-meta">
+                                        <a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i> {{post.updated_date}}</a>
+                                        <a href="#"><i class="fa fa-tree" aria-hidden="true"></i> {{post.department}}</a>
+                                    </div>
+                                    <p class="post-excerpt">{{post.description}}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {% endfor %}
+                        
+                        <div style="margin-top:20px;margin-bottom:20px;" class="row">
+                            <div class="col-12">
+                                <nav aria-label="Page navigation">
+                                    <ul class="pagination">
+                                        <li class="page-item {% if not posts.has_previous %}disabled{% endif %}">
+                                            <a class="page-link" href="{% if posts.has_previous %}?page=1{% endif %}">
+                                                <i class="fa fa-angle-double-left"></i>
+                                            </a>
+                                        </li>
+                                        <li class="page-item {% if not posts.has_previous %}disabled{% endif %}">
+                                            <a class="page-link" href="{% if posts.has_previous %}?page={{ posts.previous_page_number }}{% endif %}">
+                                                <i class="fa fa-angle-left"></i>
+                                            </a>
+                                        </li>
+                        
+                                        {% for num in posts.paginator.page_range %}
+                                            {% if num == posts.number %}
+                                                <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+                                            {% else %}
+                                                <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                                            {% endif %}
+                                        {% endfor %}
+                        
+                                        <li class="page-item {% if not posts.has_next %}disabled{% endif %}">
+                                            <a class="page-link" href="{% if posts.has_next %}?page={{ posts.next_page_number }}{% endif %}">
+                                                <i class="fa fa-angle-right"></i>
+                                            </a>
+                                        </li>
+                                        <li class="page-item {% if not posts.has_next %}disabled{% endif %}">
+                                            <a class="page-link" href="{% if posts.has_next %}?page={{ posts.paginator.num_pages }}{% endif %}">
+                                                <i class="fa fa-angle-double-right"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Blog Area End ##### -->
+
+    <!-- ##### Subscribe Area Start ##### -->
+    <section class="subscribe-newsletter-area" style="background-image: url({% get_media_prefix %}img/bg-img/subscribe.png);">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-12 col-lg-5">
+                    <!-- Section Heading -->
+                    <div class="section-heading mb-0">
+                        <h2>Sizde Fotoğraflarınızı Bizimle Paylaşın!</h2>
+                        <p>Email Üzerinden bize Ulaşın. Web Sitemizde sizin bitkilerinize de yer verelim.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="subscribe-form">
+                        <form onsubmit="openEmailClient(event)">
+                            <input type="email" name="subscribe-email" id="subscribeEmail" placeholder="Email Adresinizi Giriniz">
+                            <button type="submit" class="btn alazea-btn">Mail Gönder</button>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Subscribe Side Thumbnail -->
+        <div class="subscribe-side-thumb wow fadeInUp" data-wow-delay="500ms">
+            <img class="first-img" src="{% get_media_prefix %}img/core-img/leaf.png" alt="">
+        </div>
+    </section>
+    <!-- ##### Subscribe Area End ##### -->
+
+    <!-- ##### Contact Area Start ##### -->
+    <section class="contact-area section-padding-100-0">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-12 col-lg-5">
+                    <!-- Section Heading -->
+                    <div class="section-heading">
+                        <h2>BİZE ULAŞIN!</h2>
+                        <p>Bize mesaj gönderin,Sizi Arayalım!</p>
+                    </div>
+                    <!-- Contact Form Area -->
+                    <div class="contact-form-area mb-100">
+                        <form action="" method="post" id="myForm">
+                            <div class="row">
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="contact-name" placeholder="İsim Soyisim" name='name'>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" id="contact-email" placeholder="Email Adresiniz" name='email'>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="contact-subject" placeholder="İstek" name='subject'>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <textarea class="form-control" name="message1" id="message" cols="30" rows="10" placeholder="Mesaj"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn alazea-btn mt-15">Mesaj Gönder</button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <!-- Modal -->
+                        <div id="myModal" class="modal">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <p id="modalMessage">Successfuly</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                    <!-- Google Maps -->
+                    <div class="map-area mb-100">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1795.2616244235467!2d29.921562630964008!3d40.82229354228868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cb5badf629fe45%3A0xc81fa849234e8755!2sKocaeli%20%C3%9Cniversitesi!5e0!3m2!1str!2str!4v1714404319708!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Contact Area End ##### -->
+
+    
+
+    {%  include 'includes/footer.html' %}
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var form = document.getElementById('myForm');
+        var modal = document.getElementById('myModal');
+        var span = document.getElementsByClassName('close')[0];
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Formun normal submit işlemini durdur
+
+            // Formdaki inputları al
+            var emailInput = document.getElementById('contact-email');
+            var nameInput = document.getElementById('contact-name');
+            var subjectInput = document.getElementById('contact-subject');
+            var messageInput = document.getElementById('message');
+
+            // Inputların değerlerini trim yaparak al
+            var email = emailInput.value.trim();
+            var name = nameInput.value.trim();
+            var subject = subjectInput.value.trim();
+            var message = messageInput.value.trim();
+
+            // Boş alan kontrolü
+            if (email === '' || name === '' || subject === '' || message === '') {
+                alert('Tüm alanları doldurunuz');
+                return;
+            }
+
+            // Email formatı kontrolü
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Geçerli bir email adresi giriniz');
+                return;
+            }
+
+            // Modalı aç
+            modal.style.display = 'block';
+
+            // Formu submit et (sayfayı yeniden yükle)
+            setTimeout(function() {
+                window.location.reload();
+            }, 2000); // 2 saniye sonra sayfayı yeniden yükle
+        });
+
+        // Modalın kapatılması için X butonuna basıldığında
+        span.onclick = function () {
+            modal.style.display = 'none';
+        };
+
+        // Modalın kapatılması için modal dışına tıklandığında
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        };
+    });
+</script>
+<script>
+    function openEmailClient(event) {
+        event.preventDefault(); // Formun varsayılan davranışını engelle (sayfayı yenileme)
+        
+        var email = document.getElementById("subscribeEmail").value; // E-posta adresini al
+        
+        var subject = "Konu"; // E-posta konusunu belirle
+        var body = "Mesajınız"; // E-posta içeriğini belirle
+
+        // E-posta adresi, konu ve içerik ile bir mailto bağlantısı oluştur
+        var mailtoLink = "mailto:" + email + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+
+        // Oluşturulan mailto bağlantısını aç
+        window.location.href = mailtoLink;
+    }
+</script>
+</html>
